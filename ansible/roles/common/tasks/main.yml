@@ -1,0 +1,25 @@
+---
+- name: update cache
+  apt:
+    update_cache: true
+
+- name: update SO
+  apt:
+    name: "*"    
+- name: install packages
+  apt:
+    name: "{{packages}}"
+  vars:
+    packages:
+    - vim  
+    - curl
+    - telnet
+    - unzip
+    - net-tools
+    - htop
+    - nmap
+- name: adicionando usuario
+  user:
+    name: danilo  
+    
+
